@@ -1,0 +1,9 @@
+.c-content {
+    border-radius:30px;  
+    margin-top:2rem;
+    padding-bottom:2rem;
+    &--color{
+        color:$fontColorArticle;
+        background-color:$backgroundColor;
+    }
+}

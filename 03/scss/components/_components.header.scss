@@ -1,0 +1,24 @@
+.c-header {
+    &__logo {
+        position: relative;
+        width:25%;
+        @include marginCenter();
+        padding-bottom:1rem;
+        
+        &:before{
+            padding-bottom: 100%;
+        }
+    }
+
+    &__nav {
+        border-top:2px solid $borderColor;
+        border-bottom:2px solid $borderColor;
+    }
+}
+
+@media (max-width:480px)
+{
+    .c-header__logo{
+        width:50%;
+    }
+}

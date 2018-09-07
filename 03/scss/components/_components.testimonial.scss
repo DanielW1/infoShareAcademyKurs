@@ -1,0 +1,16 @@
+.c-testimonial {
+    @include marginCenter();
+    &__image { 
+        position: relative;
+        width:260px;
+        padding-bottom:1rem;
+        
+        &:before{
+            padding-bottom: 100%;
+        }
+    }
+
+    &__desc {
+        @include centerAndjustifyContent();
+    }
+}

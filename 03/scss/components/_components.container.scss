@@ -1,0 +1,10 @@
+@for $i from 1 to 12
+{
+    @for $j from $i to 12
+    {
+    .c-container--#{$i}-#{$j}
+    {
+        width: ($i/$j)*100%;
+    }
+    }
+}

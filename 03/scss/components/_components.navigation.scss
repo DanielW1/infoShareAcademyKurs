@@ -1,0 +1,31 @@
+.c-navigation {
+    &__list {}
+
+    &__item {
+        line-height: 3rem;
+        color:$fontColor;
+        border-right:1px solid $borderColor;
+        margin-right:-4px;
+        &--centered{
+            vertical-align: center;
+            text-align:center;
+        }
+    }
+
+    &__link {
+        display:block;
+    }
+
+    &__link:hover {
+        cursor: pointer;
+        background-color:$backgroundColorNavigation;
+        border-top: 3px solid $fontColor;
+    }
+}
+
+@media (max-width:760px)
+{
+    .c-navigation__item{
+    width: calc(1/5*100%) !important;
+    }
+}

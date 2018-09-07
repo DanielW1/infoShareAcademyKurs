@@ -1,0 +1,35 @@
+.o-image {
+
+    &:before{
+        content:"";
+        display:block;
+    }
+
+    &__pic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        border-radius:inherit;
+
+    }
+
+    &__desc {
+        @include marginCenter();
+        text-align:center;
+        font-size:1.5rem;
+        font-weight: 700;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    &--rounded {
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+    }
+
+    &--centered {
+        margin-left:auto;
+        margin-right:auto;
+    }
+}

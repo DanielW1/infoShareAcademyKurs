@@ -1,0 +1,26 @@
+.c-article {
+    &__header {}
+
+    &__image {
+        position: relative;
+        width:100%;
+        padding-bottom:1rem;
+        border-radius: 30px 30px 0 0 ;
+        &:before{
+            padding-bottom: 27.8%;
+        }
+    }
+
+    &__lead {
+       @include centerAndjustifyContent();
+    }
+
+    &__content {
+       @include centerAndjustifyContent();
+       background-color:$backgroundColor;
+    }
+    &__meta{
+        padding-left:10%;
+        color:$fontColor;
+    }
+}
