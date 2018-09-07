@@ -1,10 +1,15 @@
 .c-navigation {
+    -webkit-box-shadow: 0px 1px 40px 0px $borderColor;
+    -moz-box-shadow: 0px 1px 40px 0px $borderColor;
+    box-shadow: 0px 1px 40px 0px $borderColor;
     &__list {}
 
     &__item {
         line-height: 3rem;
         color:$fontColor;
-        border-right:1px solid $borderColor;
+        -webkit-box-shadow: 0px 1px 12px 1px $borderColor;
+        -moz-box-shadow: 0px 1px 12px 1px $borderColor;
+        box-shadow: 0px 1px 12px 1px $borderColor;
         margin-right:-4px;
         &--centered{
             vertical-align: center;
