@@ -19,16 +19,16 @@ function previousAndNext(value) {
   }
 }
 
-function secondsToHHMMSS(seconds){
-  var h=Math.floor(seconds/60/60);
-  var m=Math.floor((seconds-h*60*60)/60);
-  var s=seconds-h*60*60-m*60;
+function secondsToHHMMSS(seconds) {
+  let h = Math.floor(seconds / 60 / 60);
+  let m = Math.floor((seconds - h * 60 * 60) / 60);
+  let s = seconds - h * 60 * 60 - m * 60;
 
-  var h2=h.toString().length>1? h.toString():"0"+h;
-  var m2=m.toString().length>1? m.toString():"0"+m;
-  var s2=s.toString().length>1? s.toString():"0"+s;
+  let h2 = h.toString().length > 1 ? h.toString() : "0" + h;
+  let m2 = m.toString().length > 1 ? m.toString() : "0" + m;
+  let s2 = s.toString().length > 1 ? s.toString() : "0" + s;
 
-  return h2+":"+m2+":"+s2;
+  return h2 + ":" + m2 + ":" + s2;
 }
 
 function swapVariables(valA, valB) {
@@ -55,13 +55,14 @@ function minOfThreeNumbers(a, b, c) {
   }
 }
 
-function areNumbersDescending(a,b,c,d,e) {
-return a>b && b>c && c>d && d > e;
+function areNumbersDescending(a, b, c, d, e) {
+  return a > b && b > c && c > d && d > e;
 }
 
 function hasOneByOneDigit(value) {
   var item = value.toString().split("");
-  return (parseInt(item[2]) - parseInt(item[0]) == 2 && (parseInt(item[0]) + parseInt(item[2])) / 2 == parseInt(item[1]));
+  return (((parseInt(item[2]) - parseInt(item[0]) === 2) || (parseInt(item[0]) - parseInt(item[2]) === 2))
+    && (parseInt(item[0]) + parseInt(item[2])) / 2 == parseInt(item[1]));
 
 }
 
@@ -70,12 +71,12 @@ function getSum(sum, val) {
 }
 
 function daysInMonth(month, year) {
-  var dict = { 1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31 };
+  const dict = { 1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31 };
 
-  if (month == 2 &&( year % 4 == 0 && year % 100 != 0 || (year % 4 == 0 && year % 400 == 0))) {
+  if (month == 2 && (year % 4 == 0 && year % 100 != 0 || (year % 4 === 0 && year % 400 === 0))) {
     return 29;
   } else {
-    var a= dict[month];
+    var a = dict[month];
     return dict[month];
   }
 }
@@ -85,11 +86,11 @@ function daysInMonth(month, year) {
 // nic nie zmieniaj; dodaj jedynie implementację zamiany zmiennych
 function swapVariables(first, second) { // nie zmieniaj kolejności ani nazw
   // tytaj implementacja
-  var tmp = first;
+  let tmp = first;
 
- first = second,
- second = tmp
-  
+  first = second,
+    second = tmp
+
 
   swapVariablesCalled(first, second); // tego nie ruszaj
 }
