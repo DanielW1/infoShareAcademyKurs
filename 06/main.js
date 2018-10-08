@@ -145,12 +145,9 @@ var obj = users.find(function (element) {
   return element.age < 30 && element.gender === 'female';
 });
 
-var obj2 = users.find(x=>x.age>30 && x.gender==='male');
+var obj2 = users.find(x => x.age > 30 && x.gender === 'male');
 
-let tab=[obj,obj2];
+let tab = [obj, obj2];
 
 tab.forEach((element) => (element.sendMessage()));
-
-
-
 
