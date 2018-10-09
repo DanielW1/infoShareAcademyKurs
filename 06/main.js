@@ -141,13 +141,16 @@ users.forEach(function (element) {
   element.sendMessage();
 });
 
-var obj = users.find(function (element) {
+var findFemalePerson = users.find(function (element) {
   return element.age < 30 && element.gender === 'female';
 });
 
-var obj2 = users.find(x => x.age > 30 && x.gender === 'male');
+var findMalePerson = users.find(person => person.age > 30 && person.gender === 'male');
 
-let tab = [obj, obj2];
+let findedUsers = [findFemalePerson, findMalePerson];
 
-tab.forEach((element) => (element.sendMessage()));
+findedUsers.forEach((element) => (element.sendMessage()));
+
+
+
 
