@@ -1,0 +1,68 @@
+{
+  "type": "array",
+  "minItems": 50,
+  "maxItems": 80,
+  "items": {
+
+    "$ref": "#/definitions/Product"
+
+
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "faker": "random.uuid"
+        },
+        "name": {
+          "type": "string",
+          "faker": "commerce.productName"
+        },
+        "price": {
+          "type": "string",
+          "faker": "commerce.price"
+        },
+        "category": {
+          "type": "string",
+          "faker": "commerce.productAdjective"
+        },
+        "description": {
+          "type": "string",
+          "faker": "lorem.text"
+        },
+        "imageUrl":{
+          "type": "string",
+          "faker": "image.imageUrl"
+        },
+        "promotion":{
+          "type": "boolean"
+        },
+        "quantity":{
+          "enum":[
+            0,
+            1,
+            3,
+            24,
+            6,
+            320,
+            30,
+            5,
+            12
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "price",
+        "category",
+        "description",
+        "imageUrl",
+        "promotion",
+        "quantity"
+      ]
+
+    }
+  }
+}
