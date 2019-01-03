@@ -1,0 +1,20 @@
+.ContactDataContainer{
+    width:100%;
+    display:flex;
+}
+
+.ContactDataContainerInside{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+
+}
+
+.Container{
+    width:40%;
+
+}
+.Center{
+    margin-left: auto;
+    margin-right: auto;
+}

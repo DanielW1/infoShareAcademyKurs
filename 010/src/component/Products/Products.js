@@ -10,7 +10,7 @@ class ProductListElem extends Component {
     render() {
         const { name, promotion, quantity, uuid } = this.props.product;
         return <>
-            <div className={classnames('ProductListElem')}> {/*<img src={this.props.product.imageUrl} height="100px" width="100px"></img>*/}
+            <div className={classnames('ProductListElem')}>
                 <Link key={uuid} to={`/Products/${uuid}`}>{name}</Link>
                 {promotion && <div>Promocja !!!</div>}
                 {quantity>0 && <div>Dostepny</div>}
