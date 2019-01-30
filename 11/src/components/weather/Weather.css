@@ -1,0 +1,16 @@
+.listItem{
+    padding-top:5px;
+    border:1px solid gray;
+    display:flex;
+}
+
+.weather{
+    flex-grow:4;
+}
+.time{
+    flex-grow: 1;
+}
+
+.weatherPanel{
+    display: flex;
+}
