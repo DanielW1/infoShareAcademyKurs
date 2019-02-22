@@ -1,0 +1,36 @@
+.App{
+    background-color: dodgerblue;
+    width:100vw;
+    height: 100vh;
+    margin-left:-7px;
+    margin-top:-7px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AppButton{
+    color:dodgerblue;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 20px;
+    padding:1rem 2rem;
+    margin-top:1rem;
+    text-align: center;
+    text-decoration: none;
+}
+.AppButton:hover{
+    cursor: pointer;
+}
+
+.AppPanel{
+    display:flex;
+    flex-direction: column;
+}
+
+.AppImage{
+    border-radius: 50%;
+    width:150px;
+    height: 150px;
+    margin-bottom:10px;
+}

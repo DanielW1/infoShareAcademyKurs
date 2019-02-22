@@ -1,0 +1,28 @@
+.ResipeListItem{
+    border-bottom:2px solid gray;
+    width:15vw;
+    padding:2rem;
+    margin: 1rem;
+}
+.RecipeListItem:hover{
+    cursor: pointer;
+}
+.RecipeList{
+    display:flex;
+    flex-direction: row;
+}
+
+.RecipeAddButton{
+    color:white;
+    background-color: dodgerblue;
+    padding:1rem;
+    border-radius:20px;
+    margin:1rem;
+    text-decoration: none;
+}
+
+.RecipeAddPanel{
+    display:flex;
+
+    width:100vh;
+}

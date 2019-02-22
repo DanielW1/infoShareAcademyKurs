@@ -1,53 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { auth, provider } from "./firebaseConfig/firebase";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Home from './components/Home/Home';
+import Recipes from './components/Recipes/Recipes';
+import AddRecipe from './components/AddRecipe/AddRecipe';
+import Recipe from './components/Recipe/Recipe';
+
 
 
 
 class App extends Component {
-  state = {
-    isUser: false,
-    user:{}
-
-  }
-  componentDidMount = () => {
-    auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ isUser: true, user  })
-        console.log(user);
-      } else {
-        this.setState({ isUser: false})
-      }
-    })
-  }
-
-  onClickHandler = () => {
-    auth().signInWithPopup(provider);
-  }
-
-  onClickSignOutHandler = () => {
-    auth().signOut();
-  }
-
   render() {
-    const { isUser, user } = this.state;
-    return (
-      <div className="App">
-        {!isUser && <div className="AppPanel">
-            <div className="AppButton" >Przepisy</div>
-            <div className="AppButton" onClick={this.onClickHandler}>Sign In</div>
-          </div>}
-        {isUser && <div className="AppPanel">
-          <div className="AppPanel">
-          <img className="AppImage" src={user.photoURL} alt="Obrazek"></img>
-            <div>Cześć {user.displayName.split(' ')[0]} </div>
-          </div>
-          <div className="AppButton" >Przepisy</div>
-          <div onClick={this.onClickSignOutHandler} className="AppButton" >Sign Out</div>
-        </div>}
-      </div>
-    );
+    return <Router>
+      <>
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/recipes" component={Recipes}></Route>
+        <Route path="/addrecipe" component={AddRecipe}></Route>
+        <Route path="/recipe/:id?" component={Recipe}></Route>
+      </>
+    </Router>
   }
 }
 
