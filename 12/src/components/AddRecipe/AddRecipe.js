@@ -26,6 +26,7 @@ export default class AddRecipe extends Component{
             name:inputName,
             description:inputDescription,
             photoURL:inputURL,
+            comments:[],
         }).then(()=>alert('Zarejestrowano przepis')).catch((error)=>alert(error.message));
         this.setState({inputName:'',inputDescription:'',inputURL:''})
     }

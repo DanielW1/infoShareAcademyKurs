@@ -1,0 +1,12 @@
+.CommandsAddButton{
+    color:white;
+    background-color: dodgerblue;
+    padding:1rem;
+    border-radius:20px;
+    margin:1rem;
+    text-decoration: none;
+}
+
+.CommandsAddButton:hover{
+    cursor: pointer;
+}

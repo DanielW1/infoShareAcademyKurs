@@ -6,22 +6,6 @@ import './Home.css'
 
 export default class Home extends Component{
 
-    state = {
-        isUser: false,
-        user: {}
-
-    }
-    componentDidMount = () => {
-        auth().onAuthStateChanged((user) => {
-            if (user) {
-                this.setState({ isUser: true, user })
-                console.log(user);
-            } else {
-                this.setState({ isUser: false })
-            }
-        })
-    }
-
     onClickHandler = () => {
         auth().signInWithPopup(provider);
     }
@@ -31,7 +15,8 @@ export default class Home extends Component{
     }
 
     render() {
-        const { isUser, user } = this.state;
+        console.log(this.props);
+        const { isUser, user } = this.props;
         return (
             <div className="App">
                 {!isUser && <div className="AppPanel">

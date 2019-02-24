@@ -10,6 +10,7 @@
 .RecipeList{
     display:flex;
     flex-direction: row;
+    flex-wrap:wrap;
 }
 
 .RecipeAddButton{
@@ -21,8 +22,13 @@
     text-decoration: none;
 }
 
+
 .RecipeAddPanel{
     display:flex;
 
     width:100vh;
+}
+
+.RecipesContainer{
+    width:100vw;
 }

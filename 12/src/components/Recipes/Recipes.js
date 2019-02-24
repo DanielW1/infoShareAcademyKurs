@@ -12,7 +12,7 @@ export default class Recipes extends Component {
         firestore().collection('recipes').get().then((querySnapshot) => {
             querySnapshot.forEach(doc => this.setState(state => {
 
-                return { recipes: [...state.recipes, doc.data()] }
+                return { recipes: [...state.recipes,{id:doc.id, data:doc.data()}] }
             }))
         })
     }
@@ -22,36 +22,37 @@ export default class Recipes extends Component {
         this.setState({inputValue:value});
     }
 
-    onClickRecipeHandler = ()=>{
+    onClickRecipeHandler = (id)=>{
         console.log('handler')
-        return this.props.history.push('/recipe');
+        return this.props.history.push('/recipe/'+id);
 
     }
 
     render() {
 
         const { recipes, inputValue } = this.state;
+        const {isUser} = this.props;
 
-        return <div>
+        return <div className="RecipesContainer">
         <div>
                 <div><h2>Wyszukaj</h2></div>
             <div>Nazwa</div>
             <input onChange={this.onChangeInputValueHandler} value={inputValue}></input>
         </div>
-            <div className="RecipeAddPanel"><Link className="RecipeAddButton" to="/addrecipe">Dodaj +</Link></div>
+            {isUser&& <div className="RecipeAddPanel"><Link className="RecipeAddButton" to="/addrecipe">Dodaj +</Link></div>}
             <div className="RecipeList">
-                {recipes.filter((elem, i) => { 
-                    if(inputValue){
-                       return elem.name.toUpperCase().includes(inputValue.toUpperCase());
+                { recipes.filter(({data}, i) => { 
+                    if(inputValue && inputValue.length>2){
+                       return data.name.toUpperCase().includes(inputValue.toUpperCase());
                     }
                     else{
                         return i < 10
                     }
                     
-                    }).map(elem =>
-                    <div onClick={this.onClickRecipeHandler} className="ResipeListItem">
-                        <div>{elem.name}</div>
-                            <img src={elem.photoURL} onClick={this.onClickRecipeHandler} />
+                    }).map(({data, id})=>
+                    <div key={id} onClick={()=>this.onClickRecipeHandler(id)} className="ResipeListItem">
+                        <div>{data.name}</div>
+                            <img src={data.photoURL} onClick={this.onClickRecipeHandler} />
                     </div>)}
             </div>
         </div>
